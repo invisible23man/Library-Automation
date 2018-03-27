@@ -10,7 +10,7 @@ Session = sessionmaker(bind=engine)
 srch = Session()
 
 def srchId(mode="default"):
-	if mode=="default":
+	if str(mode)=="default":
 		os.system('clear')	
 		sid=input("Enter SId : ")
 
