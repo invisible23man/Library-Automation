@@ -1,0 +1,51 @@
+=================================================
+=						=
+=	README FILE FOR LINKING MODULES		=
+=						=
+=================================================
+
+
+Table Framework
+===========================
+Tables.py
+
+
+List of Modules for Admin
+===========================
+
+decor
+admin_cls
+admin_add
+admin_check
+admin_data_add
+
+List of Modules for Student
+===========================
+
+decor
+usr_cls
+usr_srch
+usr_srch_menu
+usr_authorize
+UserImageAuth
+
+List of Modules for Book
+===========================
+
+decor
+bk_cls
+bk_srch
+bk_srch_menu
+
+
+Commit Files
+============
+
+data_commits
+update
+
+GUI Files
+============
+GUI_adm_home
+GUI_Bsrch
+GUI_stud_home
