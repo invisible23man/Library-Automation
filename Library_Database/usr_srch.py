@@ -3,30 +3,35 @@ from sqlalchemy import create_engine
 from sqlalchemy.orm import sessionmaker
 import os
 
-engine = create_engine('sqlite:///Tables.db', echo=True)
+engine = create_engine('sqlite:///Tables.db', echo=False)
 
 # create a Session
 Session = sessionmaker(bind=engine)
 srch = Session()
 
-def srchId(mode="default"):
+def srchId(sid="default"):
 	if str(mode)=="default":
 		os.system('clear')	
 		sid=input("Enter SId : ")
 
 	# Create objects  
 	for stud in srch.query(Student).order_by(Student.SId):
-		if(mode==stud.SId):
+		if(sid==stud.SId):
 			return stud	
 	return 1
 
-def srchName():
-	os.system('clear')	
-	name=raw_input("Enter Name : ")
+def srchName(name="default", pass_="default"):
+	if str(name)=="default":
+		os.system('clear')	
+		name=raw_input("Enter Name : ")
+
 	# Create objects  
 	for stud in srch.query(Student).order_by(Student.Name):
 		if(name.lower()==stud.Name.lower()):
-			return stud	
+			if pass_==stud.Password:
+				return stud
+			else:
+				return 0	
 	return 1
 
 ### Note:
